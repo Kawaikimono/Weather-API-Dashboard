@@ -2,7 +2,7 @@
 
 ## Description
 ```
-This project was to use this [5 Day Weather Forecast API](https://openweathermap.org/forecast5) to retrieve weather data for cities on an interactive site. 
+This project was to use this 5 Day Weather Forecast API:https://openweathermap.org/forecast5 to retrieve weather data for cities on an interactive site. 
 ```
 
 ## Requirement Completed:

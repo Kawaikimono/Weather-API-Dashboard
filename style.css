@@ -1,0 +1,21 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+header{
+    justify-content: center;
+    display: flex;
+    padding-bottom: 5px;
+    background-color: #336699;
+    min-height: 5vh;
+}
+
+.search-bar{
+    background-color: #86BBD8;
+    display: flex;
+}
+
+.cards{
+    background-color: #2F4858;
+}
