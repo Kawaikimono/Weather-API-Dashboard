@@ -14,7 +14,7 @@ This project was to use this 5 Day Weather Forecast API:https://openweathermap.o
 
 Asignment link: https://kawaikimono.github.io/Lesson-6-Challenge-Weather-Dashboard/
 
-[Website preview](Website Img to come)
+![Website preview](./Preview.png)
 
 ## Credits
  To Joe and edX Boot Camps LLC for providing material.
