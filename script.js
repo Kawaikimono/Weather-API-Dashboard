@@ -1,7 +1,3 @@
-// **Hint**: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
-
-// // You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the 
-
 var btn = document.querySelector('.btn');
 var cityField = document.querySelector('#city');
 var cityTitle = document.querySelector("#city-title")
@@ -9,6 +5,18 @@ var weatherCards = document.querySelector("#weather-containers")
 var cityButtons = document.querySelector("#city-button")
 var city
 var country
+
+function populateButtonNames() {
+  rawNames = localStorage.getItem('buttonNames')
+  if(rawNames === null) {
+    return []
+  }
+  else {
+    return JSON.parse(rawNames)
+  }
+}
+
+var buttonNames = populateButtonNames()
 
 function getWeatherApi(lat,lon,createNewButton) { 
     var weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=91f70ee705cc15ae38e8e5bf4ba00fb0&units=imperial`;
@@ -57,21 +65,22 @@ function renderMe(data, createNewButton) {
         } 
         if(createNewButton)
         {
-          createButton()
+          createButton(`${city},${country}`, true)
         }
       }
       
-      function createButton (){
+      function createButton (btnName, saveBtnNames){
         var citybtn = document.createElement("button")
-        citybtn.innerHTML = `${city},${country}`
+        citybtn.innerHTML = btnName
         citybtn.classList.add("cuteBtn");
         cityButtons.appendChild(citybtn);
         citybtn.addEventListener("click", function (){
           getMapApi(this.innerHTML, false)
         })
-        
-        // save to local storage
-        // call from local storage
+        if (saveBtnNames){
+          buttonNames.push(btnName)
+          localStorage.setItem("buttonNames", JSON.stringify(buttonNames))
+        }
       }
 
 
@@ -95,5 +104,10 @@ btn.addEventListener("click", function(){
   getMapApi(cityField.value, true)
   cityField.value=""
 })
+
+buttonNames.forEach( btnName => {
+  createButton(btnName, false)
+});
+
   
       
