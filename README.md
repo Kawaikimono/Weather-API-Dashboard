@@ -1,4 +1,4 @@
-# Lesson-6-Challenge-Weather-Dashboard
+# Weather-API-Dashboard
 
 ## Description
 ```
