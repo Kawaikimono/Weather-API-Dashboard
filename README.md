@@ -12,7 +12,7 @@ This project was to use this 5 Day Weather Forecast API:https://openweathermap.o
 
 ## Depolyed Viewing
 
-Asignment link: https://kawaikimono.github.io/Lesson-6-Challenge-Weather-Dashboard/
+Asignment link: https://kawaikimono.github.io/Weather-API-Dashboard/
 
 ![Website preview](./Preview.png)
 
